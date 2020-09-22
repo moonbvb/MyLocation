@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 class CurrentLocationViewController: UIViewController {
-
+    
     // MARK: - Outlets
     // ===============
     
@@ -28,6 +28,14 @@ class CurrentLocationViewController: UIViewController {
     let locationManager = CLLocationManager()
     var location: CLLocation?
     
+    var updatingLocation = false
+    var lastLocationError: Error?
+    
+    let geocoder = CLGeocoder()
+    var placemark: CLPlacemark?
+    var performingReverseGeocoding = false
+    var lastGeocodingError: Error?
+    
     
     // MARK: - ViewDidLoad
     // ===================
@@ -37,7 +45,7 @@ class CurrentLocationViewController: UIViewController {
         updateLabels()
     }
     
-
+    
     // MARK: - Actions
     // ===============
     
@@ -55,15 +63,22 @@ class CurrentLocationViewController: UIViewController {
             return
         }
         
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
+        if updatingLocation {
+            stopLocationManager()
+        } else {
+            location = nil
+            lastLocationError = nil
+            startLocationManager()
+        }
+        
+        updateLabels()
     }
-
+    
     
     // MARK: - Methods
-    // ===============
     
+    
+    // MARK: Labels
     func updateLabels() {
         if let location = location {
             latitudeLabel.text = String(format: "%.8f", location.coordinate.latitude)
@@ -71,10 +86,51 @@ class CurrentLocationViewController: UIViewController {
             tagButton.isHidden = false
             messageLabel.text = ""
         } else {
-            latitudeLabel.text = ""
-            longitudeLabel.text = ""
-            tagButton.isHidden = true
-            messageLabel.text = "Tap `Get my location` to Start"
+            let statusMessage: String
+            
+            if let error = lastLocationError as NSError? {
+                if error.domain == kCLErrorDomain && error.code == CLError.denied.rawValue {
+                    statusMessage = "Location Service Disabled"
+                } else {
+                    statusMessage = "Error Getting Location"
+                }
+            } else if !CLLocationManager.locationServicesEnabled() {
+                statusMessage = "Location Services Disabled"
+            } else if updatingLocation {
+                statusMessage = "Searching..."
+            } else {
+                statusMessage = "Tap `Get my location` to Start"
+            }
+            
+            messageLabel.text = statusMessage
+            configureGetButton()
+        }
+    }
+    
+    // MARK: Buttons
+    func configureGetButton() {
+        if updatingLocation {
+            getButton.setTitle("Stop", for: .normal)
+        } else {
+            getButton.setTitle("Get My Location", for: .normal)
+        }
+    }
+    
+    // MARK: LocationManager
+    func startLocationManager() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            updatingLocation = true
+        }
+    }
+    
+    func stopLocationManager() {
+        if updatingLocation {
+            locationManager.stopUpdatingLocation()
+            locationManager.delegate = nil
+            updatingLocation = false
         }
     }
     
@@ -87,6 +143,11 @@ extension CurrentLocationViewController: CLLocationManagerDelegate {
     // Ошибка при обновлении локации locationManager
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("didFailWithError \(error.localizedDescription)")
+        
+        if (error as NSError).code == CLError.locationUnknown.rawValue { return }
+        lastLocationError = error
+        stopLocationManager()
+        updateLabels()
     }
     
     // Удачное обновление локации locationManager
@@ -94,8 +155,36 @@ extension CurrentLocationViewController: CLLocationManagerDelegate {
         let newLocation = locations.last!
         print("didUpdateLocation \(newLocation)")
         
-        location = newLocation
-        updateLabels()
+        if newLocation.timestamp.timeIntervalSinceNow < -5 { return }
+        
+        if newLocation.horizontalAccuracy < 0 { return }
+        
+        if location == nil || location!.horizontalAccuracy > newLocation.horizontalAccuracy {
+            lastLocationError = nil
+            location = newLocation
+            
+            if newLocation.horizontalAccuracy <= locationManager.desiredAccuracy {
+                print("*** We`re done!")
+                stopLocationManager()
+            }
+            updateLabels()
+            
+            if !performingReverseGeocoding {
+                print("*** Going to geocode")
+                
+                performingReverseGeocoding = true
+                
+                geocoder.reverseGeocodeLocation(newLocation) { (placemarks, error) in
+                    if let error = error {
+                        print("*** Reverse Geocoding error: \(error.localizedDescription)")
+                        return
+                    }
+                    if let places = placemarks {
+                        print("*** Found places: \(places)")
+                    }
+                }
+            }
+        }
     }
     
 }
