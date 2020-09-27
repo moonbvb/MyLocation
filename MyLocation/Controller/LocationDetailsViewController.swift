@@ -55,6 +55,12 @@ class LocationDetailsViewController: UITableViewController {
         }
         
         dateLabel.text = format(date: Date())
+        
+        // Hide keyboard
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        gestureRecognizer.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(gestureRecognizer)
+        
     }
     
     
@@ -62,7 +68,13 @@ class LocationDetailsViewController: UITableViewController {
     // ===============
     
     @IBAction func done() {
-        navigationController?.popViewController(animated: true)
+        let hudView = HudView.hud(inView: navigationController!.view, animated: true)
+        hudView.text = "Tagged"
+        
+        afterDelay(0.6) {
+            hudView.hide()
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func cancel() {
@@ -86,10 +98,41 @@ class LocationDetailsViewController: UITableViewController {
         }
     }
     
+    // MARK: Keyboard
+    @objc func hideKeyboard(_ gestureRecognizer: UIGestureRecognizer) {
+        let point = gestureRecognizer.location(in: tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        if indexPath != nil && indexPath!.section == 0 && indexPath!.row == 0 {
+            return
+        }
+        desctiptionTextView.resignFirstResponder()
+    }
+    
 }
 
 
-//MARK: - Helper Methods Extension
+// MARK: - Table View Delegates
+extension LocationDetailsViewController {
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.section == 0 || indexPath.section == 1 {
+            return indexPath
+        } else {
+            return nil
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            desctiptionTextView.becomeFirstResponder()
+        }
+    }
+    
+}
+
+
+// MARK: - Helper Methods Extension
 extension LocationDetailsViewController {
     
     func string(from placemark: CLPlacemark) -> String {
