@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3324F84B25208EB80060806B /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324F84A25208EB80060806B /* LocationDetailsViewController.swift */; };
+		3324F84E2520A1430060806B /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324F84D2520A1430060806B /* CategoryPickerViewController.swift */; };
 		33C45EEA25190F00005F8372 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C45EE925190F00005F8372 /* AppDelegate.swift */; };
 		33C45EEC25190F00005F8372 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C45EEB25190F00005F8372 /* SceneDelegate.swift */; };
 		33C45EF125190F00005F8372 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C45EEF25190F00005F8372 /* Main.storyboard */; };
 		33C45EF425190F00005F8372 /* MyLocation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33C45EF225190F00005F8372 /* MyLocation.xcdatamodeld */; };
 		33C45EF625190F00005F8372 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C45EF525190F00005F8372 /* Assets.xcassets */; };
 		33C45EF925190F00005F8372 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C45EF725190F00005F8372 /* LaunchScreen.storyboard */; };
-		33C45F1425191104005F8372 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C45F1325191104005F8372 /* TabBarViewController.swift */; };
 		33C45F17251911D5005F8372 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C45F16251911D5005F8372 /* CurrentLocationViewController.swift */; };
 		33C45F1A251911DE005F8372 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C45F19251911DE005F8372 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3324F84A25208EB80060806B /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		3324F84D2520A1430060806B /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		33C45EE625190F00005F8372 /* MyLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C45EE925190F00005F8372 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33C45EEB25190F00005F8372 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,7 +30,6 @@
 		33C45EF525190F00005F8372 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33C45EF825190F00005F8372 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33C45EFA25190F00005F8372 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33C45F1325191104005F8372 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		33C45F16251911D5005F8372 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		33C45F19251911DE005F8372 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,9 +103,10 @@
 		33C45F10251910B5005F8372 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				33C45F1325191104005F8372 /* TabBarViewController.swift */,
 				33C45F16251911D5005F8372 /* CurrentLocationViewController.swift */,
 				33C45F19251911DE005F8372 /* SecondViewController.swift */,
+				3324F84A25208EB80060806B /* LocationDetailsViewController.swift */,
+				3324F84D2520A1430060806B /* CategoryPickerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,8 +181,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3324F84E2520A1430060806B /* CategoryPickerViewController.swift in Sources */,
+				3324F84B25208EB80060806B /* LocationDetailsViewController.swift in Sources */,
 				33C45F1A251911DE005F8372 /* SecondViewController.swift in Sources */,
-				33C45F1425191104005F8372 /* TabBarViewController.swift in Sources */,
 				33C45EEA25190F00005F8372 /* AppDelegate.swift in Sources */,
 				33C45F17251911D5005F8372 /* CurrentLocationViewController.swift in Sources */,
 				33C45EF425190F00005F8372 /* MyLocation.xcdatamodeld in Sources */,
