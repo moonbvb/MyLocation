@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class CurrentLocationViewController: UIViewController {
     
@@ -37,6 +38,8 @@ class CurrentLocationViewController: UIViewController {
     var lastGeocodingError: Error?
     
     var timer: Timer?
+    
+    var managedObjectContext: NSManagedObjectContext!
     
     
     // MARK: - ViewDidLoad
@@ -176,6 +179,7 @@ class CurrentLocationViewController: UIViewController {
             let controller = segue.destination as! LocationDetailsViewController
             controller.coordinate = location!.coordinate
             controller.placemark = placemark
+            controller.managedObjectContext = managedObjectContext
         }
     }
     

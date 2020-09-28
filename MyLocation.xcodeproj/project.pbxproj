@@ -11,10 +11,11 @@
 		3324F84E2520A1430060806B /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324F84D2520A1430060806B /* CategoryPickerViewController.swift */; };
 		3324F8522521101B0060806B /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324F8512521101B0060806B /* HudView.swift */; };
 		3324F855252124D10060806B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324F854252124D10060806B /* Functions.swift */; };
+		3324F85E25221E510060806B /* DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3324F85D25221E510060806B /* DataModel.xcdatamodel */; };
+		3324F868252225DC0060806B /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324F866252225DC0060806B /* Location+CoreDataClass.swift */; };
+		3324F869252225DC0060806B /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324F867252225DC0060806B /* Location+CoreDataProperties.swift */; };
 		33C45EEA25190F00005F8372 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C45EE925190F00005F8372 /* AppDelegate.swift */; };
-		33C45EEC25190F00005F8372 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C45EEB25190F00005F8372 /* SceneDelegate.swift */; };
 		33C45EF125190F00005F8372 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C45EEF25190F00005F8372 /* Main.storyboard */; };
-		33C45EF425190F00005F8372 /* MyLocation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33C45EF225190F00005F8372 /* MyLocation.xcdatamodeld */; };
 		33C45EF625190F00005F8372 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C45EF525190F00005F8372 /* Assets.xcassets */; };
 		33C45EF925190F00005F8372 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C45EF725190F00005F8372 /* LaunchScreen.storyboard */; };
 		33C45F17251911D5005F8372 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C45F16251911D5005F8372 /* CurrentLocationViewController.swift */; };
@@ -26,11 +27,12 @@
 		3324F84D2520A1430060806B /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		3324F8512521101B0060806B /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		3324F854252124D10060806B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		3324F85D25221E510060806B /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		3324F866252225DC0060806B /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3324F867252225DC0060806B /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		33C45EE625190F00005F8372 /* MyLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C45EE925190F00005F8372 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33C45EEB25190F00005F8372 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		33C45EF025190F00005F8372 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		33C45EF325190F00005F8372 /* MyLocation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyLocation.xcdatamodel; sourceTree = "<group>"; };
 		33C45EF525190F00005F8372 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33C45EF825190F00005F8372 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33C45EFA25190F00005F8372 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3324F86B25224E5E0060806B /* CodeData */ = {
+			isa = PBXGroup;
+			children = (
+				3324F866252225DC0060806B /* Location+CoreDataClass.swift */,
+				3324F867252225DC0060806B /* Location+CoreDataProperties.swift */,
+				3324F85D25221E510060806B /* DataModel.xcdatamodel */,
+			);
+			path = CodeData;
+			sourceTree = "<group>";
+		};
 		33C45EDD25190F00005F8372 = {
 			isa = PBXGroup;
 			children = (
@@ -71,9 +83,9 @@
 				33C45F0625190FEE005F8372 /* Delegate */,
 				33C45F10251910B5005F8372 /* Controller */,
 				33C45F0825190FFA005F8372 /* View */,
+				3324F86B25224E5E0060806B /* CodeData */,
 				33C45EF525190F00005F8372 /* Assets.xcassets */,
 				33C45F0A25191010005F8372 /* Other */,
-				3324F854252124D10060806B /* Functions.swift */,
 			);
 			path = MyLocation;
 			sourceTree = "<group>";
@@ -82,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				33C45EE925190F00005F8372 /* AppDelegate.swift */,
-				33C45EEB25190F00005F8372 /* SceneDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -100,8 +111,8 @@
 		33C45F0A25191010005F8372 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				3324F854252124D10060806B /* Functions.swift */,
 				33C45EFA25190F00005F8372 /* Info.plist */,
-				33C45EF225190F00005F8372 /* MyLocation.xcdatamodeld */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -110,9 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				33C45F16251911D5005F8372 /* CurrentLocationViewController.swift */,
-				33C45F19251911DE005F8372 /* SecondViewController.swift */,
 				3324F84A25208EB80060806B /* LocationDetailsViewController.swift */,
 				3324F84D2520A1430060806B /* CategoryPickerViewController.swift */,
+				33C45F19251911DE005F8372 /* SecondViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,15 +198,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3324F85E25221E510060806B /* DataModel.xcdatamodel in Sources */,
 				3324F84E2520A1430060806B /* CategoryPickerViewController.swift in Sources */,
+				3324F869252225DC0060806B /* Location+CoreDataProperties.swift in Sources */,
 				3324F84B25208EB80060806B /* LocationDetailsViewController.swift in Sources */,
 				3324F855252124D10060806B /* Functions.swift in Sources */,
 				33C45F1A251911DE005F8372 /* SecondViewController.swift in Sources */,
 				33C45EEA25190F00005F8372 /* AppDelegate.swift in Sources */,
 				3324F8522521101B0060806B /* HudView.swift in Sources */,
 				33C45F17251911D5005F8372 /* CurrentLocationViewController.swift in Sources */,
-				33C45EF425190F00005F8372 /* MyLocation.xcdatamodeld in Sources */,
-				33C45EEC25190F00005F8372 /* SceneDelegate.swift in Sources */,
+				3324F868252225DC0060806B /* Location+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,19 +409,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		33C45EF225190F00005F8372 /* MyLocation.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				33C45EF325190F00005F8372 /* MyLocation.xcdatamodel */,
-			);
-			currentVersion = 33C45EF325190F00005F8372 /* MyLocation.xcdatamodel */;
-			path = MyLocation.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 33C45EDE25190F00005F8372 /* Project object */;
 }
