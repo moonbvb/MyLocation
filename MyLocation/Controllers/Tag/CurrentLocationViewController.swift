@@ -13,7 +13,6 @@ import CoreData
 class CurrentLocationViewController: UIViewController {
     
     // MARK: - Outlets
-    // ===============
     
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
@@ -24,7 +23,6 @@ class CurrentLocationViewController: UIViewController {
     
     
     // MARK: - Properties
-    // ==================
     
     let locationManager = CLLocationManager()
     var location: CLLocation?
@@ -43,7 +41,6 @@ class CurrentLocationViewController: UIViewController {
     
     
     // MARK: - ViewDidLoad
-    // ===================
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +61,6 @@ class CurrentLocationViewController: UIViewController {
     
     
     // MARK: - Actions
-    // ===============
     
     @IBAction func getLocation() {
         // Отправка запрос для получения разрешения на получение геоданных_
@@ -116,6 +112,7 @@ class CurrentLocationViewController: UIViewController {
             }
             
         } else {
+            tagButton.isHidden = true
             let statusMessage: String
             
             if let error = lastLocationError as NSError? {

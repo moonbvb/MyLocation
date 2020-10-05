@@ -10,7 +10,6 @@ import UIKit
 class CategoryPickerViewController: UITableViewController {
 
     // MARK: - Properties
-    // ==================
     
     var selectedCategoryName = ""
     
@@ -31,7 +30,6 @@ class CategoryPickerViewController: UITableViewController {
     
     
     // MARK: - View
-    // ============
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +42,6 @@ class CategoryPickerViewController: UITableViewController {
     }
     
     // MARK: - Methods
-    // ===============
     
     // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="58" id="VtA-3j-lN1">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="58" id="VtA-3j-lN1" customClass="LocationCell" customModule="MyLocation" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VtA-3j-lN1" id="yXI-hr-3iH">
@@ -52,6 +52,11 @@
                                         <constraint firstItem="kuC-RJ-w9r" firstAttribute="top" secondItem="yXI-hr-3iH" secondAttribute="top" id="qe6-3i-2rp"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="MO6-Qd-VHg" id="enN-tF-Z6z"/>
+                                    <outlet property="descriptionLabel" destination="UAY-eV-FU8" id="PgD-bd-IYb"/>
+                                    <segue destination="Q3P-bt-bDA" kind="show" identifier="EditLocation" id="nR8-75-NXT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -457,7 +462,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36a-3f-2xE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2524" y="-222.41379310344828"/>
+            <point key="canvasLocation" x="2593" y="148"/>
         </scene>
         <!--Category Picker View Controller-->
         <scene sceneID="jtY-1p-ie9">
@@ -499,7 +504,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kif-bk-lm1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="wBG-0A-Nyy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3396" y="-223"/>
+            <point key="canvasLocation" x="3526" y="148"/>
         </scene>
         <!--Tag-->
         <scene sceneID="ugz-W8-kzD">
@@ -521,6 +526,9 @@
             <point key="canvasLocation" x="740" y="-221.67487684729065"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nR8-75-NXT"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
