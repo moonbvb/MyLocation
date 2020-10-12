@@ -28,3 +28,4 @@ extension Location {
 extension Location : Identifiable {
 
 }
+
