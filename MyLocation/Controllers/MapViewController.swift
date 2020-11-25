@@ -26,11 +26,11 @@ class MapViewController: UIViewController {
             NotificationCenter.default.addObserver(forName: Notification.Name.NSManagedObjectContextObjectsDidChange,
                                                    object: managedObjectContext, queue: .main) { notificaion in
                 
-                if let dictionary = notificaion.userInfo {
-                    print(dictionary[NSInsertedObjectsKey])
-                    print(dictionary[NSUpdatedObjectsKey])
-                    print(dictionary[NSDeletedObjectsKey])
-                }
+//                if let dictionary = notificaion.userInfo {
+//                    print(dictionary[NSInsertedObjectsKey])
+//                    print(dictionary[NSUpdatedObjectsKey])
+//                    print(dictionary[NSDeletedObjectsKey])
+//                }
                 
                 if self.isViewLoaded {
                     self.updateLocations()
@@ -50,7 +50,7 @@ class MapViewController: UIViewController {
         updateLocations()
         if locations.isEmpty {
             showLocations()
-        }
+        } 
     }
     
     

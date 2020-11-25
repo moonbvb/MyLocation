@@ -24,6 +24,10 @@
 	<array/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app lets you keep track of interesting places. It needs access to the GPS coordinates for your location.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Add photos to your locations.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Add photos to your locations.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

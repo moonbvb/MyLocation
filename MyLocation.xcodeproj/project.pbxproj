@@ -23,6 +23,7 @@
 		33C45F17251911D5005F8372 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C45F16251911D5005F8372 /* CurrentLocationViewController.swift */; };
 		33DE233D2534B9A0006AD946 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DE233C2534B9A0006AD946 /* MapKit.framework */; };
 		33DE23402534BA59006AD946 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DE233F2534BA59006AD946 /* MapViewController.swift */; };
+		92029FAA256E51B900CD2973 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92029FA9256E51B900CD2973 /* UIImage+Resize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		33C45F16251911D5005F8372 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		33DE233C2534B9A0006AD946 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		33DE233F2534BA59006AD946 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		92029FA9256E51B900CD2973 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				33C45F0825190FFA005F8372 /* View */,
 				33C45F10251910B5005F8372 /* Controllers */,
 				3324F854252124D10060806B /* Functions.swift */,
+				92029FA9256E51B900CD2973 /* UIImage+Resize.swift */,
 				33C45EFA25190F00005F8372 /* Info.plist */,
 				33C45EF525190F00005F8372 /* Assets.xcassets */,
 				3324F86B25224E5E0060806B /* CodeData */,
@@ -229,6 +232,7 @@
 				3324F87825265A320060806B /* LocationsViewController.swift in Sources */,
 				3324F84E2520A1430060806B /* CategoryPickerViewController.swift in Sources */,
 				3324F869252225DC0060806B /* Location+CoreDataProperties.swift in Sources */,
+				92029FAA256E51B900CD2973 /* UIImage+Resize.swift in Sources */,
 				3324F84B25208EB80060806B /* LocationDetailsViewController.swift in Sources */,
 				3324F855252124D10060806B /* Functions.swift in Sources */,
 				33DE23402534BA59006AD946 /* MapViewController.swift in Sources */,

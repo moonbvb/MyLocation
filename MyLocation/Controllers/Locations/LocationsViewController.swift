@@ -104,6 +104,7 @@ extension LocationsViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let location = fetchedResultsController.object(at: indexPath)
+            location.removePhotoFile()
             managedObjectContext.delete(location)
             do {
                 try managedObjectContext.save()
@@ -112,6 +113,7 @@ extension LocationsViewController {
             }
         }
     }
+    
 }
 
 
@@ -174,3 +176,4 @@ extension LocationsViewController: NSFetchedResultsControllerDelegate {
         tableView.endUpdates()
     }
 }
+
